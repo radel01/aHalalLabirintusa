@@ -36,8 +36,21 @@ public class HalalLabirintusa extends javax.swing.JFrame {
     String oldal387="Hallod, hogy elölről súlyos lépések közelednek. Egy széles, állatbőrökbe öltözött, kőbaltás, primitívlény lép elő. Ahogy meglát, morog, a földre köp, majd a kőbaltát felemelve közeledik, és mindennek kinéz, csak barátságosnak nem. Előhúzod kardodat, és felkészülsz, hogy megküzdj a Barlangi Emberrel.\n" +
 "Barlangi Ember ÜGYESSÉG 7 ÉLETERŐ 7";
     
+    
     public HalalLabirintusa() {
         initComponents();
+        btnVarazslo.setOpaque(false);
+        btnVarazslo.setBackground(new Color(0, 0, 0, 0));
+        btnTorpe.setOpaque(false);
+        btnTorpe.setBackground(new Color(0, 0, 0, 0));
+        btnTunde.setOpaque(false);
+        btnTunde.setBackground(new Color(0, 0, 0, 0));
+        
+        
+        lblHatter.setVisible(false);
+        pnlJatek.setVisible(false);
+        pnlKarakterValasztas.setVisible(true);
+        lblKarakterHatter.setVisible(false);
     }
 
     /**
@@ -49,7 +62,7 @@ public class HalalLabirintusa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnlFoPanel = new javax.swing.JLayeredPane();
+        pnlJatek = new javax.swing.JLayeredPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtaSzoveg = new javax.swing.JTextArea();
         btn1 = new javax.swing.JButton();
@@ -61,6 +74,17 @@ public class HalalLabirintusa extends javax.swing.JFrame {
         lblErmeMennyiseg = new javax.swing.JLabel();
         lblCim = new javax.swing.JLabel();
         lblHatter = new javax.swing.JLabel();
+        pnlKarakterValasztas = new javax.swing.JLayeredPane();
+        btnTorpe = new javax.swing.JButton();
+        btnVarazslo = new javax.swing.JButton();
+        btnTunde = new javax.swing.JButton();
+        lblKarakterCim = new javax.swing.JLabel();
+        lblKepesseg = new javax.swing.JLabel();
+        lblKarakterHatter = new javax.swing.JLabel();
+        pnlKezdes = new javax.swing.JLayeredPane();
+        lblElsoCim = new javax.swing.JLabel();
+        btnKezdes = new javax.swing.JButton();
+        lblHatterElso = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Halál Labirintus");
@@ -86,6 +110,9 @@ public class HalalLabirintusa extends javax.swing.JFrame {
         txtaSzoveg.setWrapStyleWord(true);
         jScrollPane1.setViewportView(txtaSzoveg);
 
+        pnlJatek.add(jScrollPane1);
+        jScrollPane1.setBounds(369, 71, 202, 241);
+
         btn1.setBackground(new java.awt.Color(91, 72, 41));
         btn1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         btn1.setForeground(new java.awt.Color(239, 237, 193));
@@ -94,6 +121,8 @@ public class HalalLabirintusa extends javax.swing.JFrame {
                 btn1MouseClicked(evt);
             }
         });
+        pnlJatek.add(btn1);
+        btn1.setBounds(750, 330, 100, 53);
 
         btn2.setBackground(new java.awt.Color(91, 72, 41));
         btn2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
@@ -104,98 +133,104 @@ public class HalalLabirintusa extends javax.swing.JFrame {
                 btn2MouseClicked(evt);
             }
         });
+        pnlJatek.add(btn2);
+        btn2.setBounds(896, 330, 100, 53);
 
         lblKep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/harcos3.png"))); // NOI18N
+        pnlJatek.add(lblKep);
+        lblKep.setBounds(111, 71, 185, 260);
 
         lblElet.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         lblElet.setText("Élet:");
+        pnlJatek.add(lblElet);
+        lblElet.setBounds(36, 360, 56, 33);
 
         lblEletMennyiseg.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         lblEletMennyiseg.setText("10");
+        pnlJatek.add(lblEletMennyiseg);
+        lblEletMennyiseg.setBounds(98, 360, 36, 33);
 
         lblErme.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         lblErme.setText("Érmék:");
+        pnlJatek.add(lblErme);
+        lblErme.setBounds(186, 360, 77, 33);
 
         lblErmeMennyiseg.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         lblErmeMennyiseg.setText("25");
+        pnlJatek.add(lblErmeMennyiseg);
+        lblErmeMennyiseg.setBounds(269, 360, 27, 33);
 
         lblCim.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         lblCim.setText("A HALÁL LABIRINTUSA");
-
-        pnlFoPanel.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        pnlFoPanel.setLayer(btn1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        pnlFoPanel.setLayer(btn2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        pnlFoPanel.setLayer(lblKep, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        pnlFoPanel.setLayer(lblElet, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        pnlFoPanel.setLayer(lblEletMennyiseg, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        pnlFoPanel.setLayer(lblErme, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        pnlFoPanel.setLayer(lblErmeMennyiseg, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        pnlFoPanel.setLayer(lblCim, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout pnlFoPanelLayout = new javax.swing.GroupLayout(pnlFoPanel);
-        pnlFoPanel.setLayout(pnlFoPanelLayout);
-        pnlFoPanelLayout.setHorizontalGroup(
-            pnlFoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlFoPanelLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(pnlFoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlFoPanelLayout.createSequentialGroup()
-                        .addGroup(pnlFoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(pnlFoPanelLayout.createSequentialGroup()
-                                .addComponent(lblElet, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblEletMennyiseg, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(52, 52, 52)
-                                .addComponent(lblErme, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblErmeMennyiseg))
-                            .addGroup(pnlFoPanelLayout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addComponent(lblKep, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(53, 53, 53)
-                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)
-                        .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 55, Short.MAX_VALUE))
-                    .addGroup(pnlFoPanelLayout.createSequentialGroup()
-                        .addComponent(lblCim)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(pnlFoPanelLayout.createSequentialGroup()
-                .addGap(369, 369, 369)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        pnlFoPanelLayout.setVerticalGroup(
-            pnlFoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlFoPanelLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(lblCim)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlFoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnlFoPanelLayout.createSequentialGroup()
-                        .addComponent(lblKep)
-                        .addGap(29, 29, 29)
-                        .addGroup(pnlFoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblElet)
-                            .addComponent(lblEletMennyiseg)
-                            .addComponent(lblErme)
-                            .addComponent(lblErmeMennyiseg))
-                        .addContainerGap(57, Short.MAX_VALUE))
-                    .addGroup(pnlFoPanelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addGap(18, 18, 18)
-                        .addGroup(pnlFoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(67, 67, 67))))
-        );
-
-        getContentPane().add(pnlFoPanel);
-        pnlFoPanel.setBounds(10, 20, 650, 450);
+        pnlJatek.add(lblCim);
+        lblCim.setBounds(36, 26, 268, 33);
 
         lblHatter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/hatter4.png"))); // NOI18N
-        getContentPane().add(lblHatter);
-        lblHatter.setBounds(0, -20, 690, 490);
+        pnlJatek.add(lblHatter);
+        lblHatter.setBounds(-40, -10, 650, 470);
+
+        getContentPane().add(pnlJatek);
+        pnlJatek.setBounds(680, 10, 650, 450);
+
+        btnTorpe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/harcos3.png"))); // NOI18N
+        pnlKarakterValasztas.add(btnTorpe);
+        btnTorpe.setBounds(400, 90, 240, 260);
+
+        btnVarazslo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/varazslo.png"))); // NOI18N
+        btnVarazslo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnVarazsloMouseEntered(evt);
+            }
+        });
+        pnlKarakterValasztas.add(btnVarazslo);
+        btnVarazslo.setBounds(60, 80, 180, 270);
+
+        btnTunde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/tunde1.png"))); // NOI18N
+        pnlKarakterValasztas.add(btnTunde);
+        btnTunde.setBounds(250, 90, 140, 260);
+
+        lblKarakterCim.setFont(new java.awt.Font("Tempus Sans ITC", 1, 36)); // NOI18N
+        lblKarakterCim.setText("VÁLASSZ KARAKTERT!");
+        pnlKarakterValasztas.add(lblKarakterCim);
+        lblKarakterCim.setBounds(130, 30, 410, 50);
+        pnlKarakterValasztas.add(lblKepesseg);
+        lblKepesseg.setBounds(100, 360, 460, 60);
+
+        lblKarakterHatter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/hatter4.png"))); // NOI18N
+        pnlKarakterValasztas.add(lblKarakterHatter);
+        lblKarakterHatter.setBounds(0, 0, 650, 450);
+
+        getContentPane().add(pnlKarakterValasztas);
+        pnlKarakterValasztas.setBounds(0, 0, 650, 0);
+
+        lblElsoCim.setFont(new java.awt.Font("Viner Hand ITC", 1, 24)); // NOI18N
+        lblElsoCim.setForeground(new java.awt.Color(249, 241, 213));
+        lblElsoCim.setText("<html>\n<head>\n <h1 text align=\"center\">A HALÁL<br>LABIRINTUSA</h1>\n</head>\n</html>");
+        pnlKezdes.add(lblElsoCim);
+        lblElsoCim.setBounds(89, 59, 227, 140);
+
+        btnKezdes.setBackground(new java.awt.Color(102, 0, 0));
+        btnKezdes.setFont(new java.awt.Font("Viner Hand ITC", 1, 14)); // NOI18N
+        btnKezdes.setText("<html>\n<head>\n <p color=\"white\">Induljon a kaland!</p>\n</head>\n</html>");
+        btnKezdes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnKezdesMouseClicked(evt);
+            }
+        });
+        btnKezdes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKezdesActionPerformed(evt);
+            }
+        });
+        pnlKezdes.add(btnKezdes);
+        btnKezdes.setBounds(98, 252, 162, 30);
+
+        getContentPane().add(pnlKezdes);
+        pnlKezdes.setBounds(10, 10, 630, 430);
+
+        lblHatterElso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/csukott.png"))); // NOI18N
+        getContentPane().add(lblHatterElso);
+        lblHatterElso.setBounds(0, 0, 660, 450);
 
         pack();
         setLocationRelativeTo(null);
@@ -248,11 +283,16 @@ public class HalalLabirintusa extends javax.swing.JFrame {
     }//GEN-LAST:event_btn2MouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-    JTextArea txtaSzoveg = new JTextArea();
-    txtaSzoveg.setOpaque(false);
-    txtaSzoveg.setBackground(new Color(0, 0, 0, 0));
+//    lblHatter.setVisible(false);
+//    pnlJatek.setVisible(false);
+//    pnlKarakterValasztas.setVisible(false);
+//    lblKarakterHatter.setVisible(false);
+    pnlKezdes.setVisible(true);
+//        JTextArea txtaSzoveg = new JTextArea();
+//    txtaSzoveg.setOpaque(false);
+//    txtaSzoveg.setBackground(new Color(0, 0, 0, 0));
     }//GEN-LAST:event_formWindowOpened
-
+        
     private void btn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn1MouseClicked
         szamlalo1+=1;
             if (szamlalo1 == 1) {
@@ -283,6 +323,20 @@ public class HalalLabirintusa extends javax.swing.JFrame {
                 btn2.setText("");
             }
     }//GEN-LAST:event_btn1MouseClicked
+
+    private void btnKezdesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKezdesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnKezdesActionPerformed
+
+    private void btnKezdesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKezdesMouseClicked
+        lblKarakterHatter.setVisible(true);
+        pnlKarakterValasztas.setVisible(true);
+  
+    }//GEN-LAST:event_btnKezdesMouseClicked
+
+    private void btnVarazsloMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVarazsloMouseEntered
+    lblKepesseg.setText("Varázsló"+System.lineSeparator()+"Élet: 8"+System.lineSeparator()+"Érmék: 30"+System.lineSeparator()+"Képesség:Varázsereje van, úgyhogy félnek tőle a trollok.");
+    }//GEN-LAST:event_btnVarazsloMouseEntered
 
     /**
      * @param args the command line arguments
@@ -322,15 +376,26 @@ public class HalalLabirintusa extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn1;
     private javax.swing.JButton btn2;
+    private javax.swing.JButton btnKezdes;
+    private javax.swing.JButton btnTorpe;
+    private javax.swing.JButton btnTunde;
+    private javax.swing.JButton btnVarazslo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCim;
     private javax.swing.JLabel lblElet;
     private javax.swing.JLabel lblEletMennyiseg;
+    private javax.swing.JLabel lblElsoCim;
     private javax.swing.JLabel lblErme;
     private javax.swing.JLabel lblErmeMennyiseg;
     private javax.swing.JLabel lblHatter;
+    private javax.swing.JLabel lblHatterElso;
+    private javax.swing.JLabel lblKarakterCim;
+    private javax.swing.JLabel lblKarakterHatter;
     private javax.swing.JLabel lblKep;
-    private javax.swing.JLayeredPane pnlFoPanel;
+    private javax.swing.JLabel lblKepesseg;
+    private javax.swing.JLayeredPane pnlJatek;
+    private javax.swing.JLayeredPane pnlKarakterValasztas;
+    private javax.swing.JLayeredPane pnlKezdes;
     private javax.swing.JTextArea txtaSzoveg;
     // End of variables declaration//GEN-END:variables
 }
