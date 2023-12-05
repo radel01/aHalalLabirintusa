@@ -5,6 +5,7 @@
 package ahalalabirintusa;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 import javax.swing.JTextArea;
 
 /**
@@ -35,6 +36,10 @@ public class HalalLabirintusa extends javax.swing.JFrame {
     String oldal373="Fölmászol a lágy sziklára, attól tartasz, hogy bár-melyik pillanatban elnyelhet. Nehéz átvergődni rajta, mert puha anyagában alig tudod a lábadat emelni, de végül átvergődsz rajta. Megkönnyebbülten érsz újra szilárd talajra, és fordulsz kelet felé.";
     String oldal387="Hallod, hogy elölről súlyos lépések közelednek. Egy széles, állatbőrökbe öltözött, kőbaltás, primitívlény lép elő. Ahogy meglát, morog, a földre köp, majd a kőbaltát felemelve közeledik, és mindennek kinéz, csak barátságosnak nem. Előhúzod kardodat, és felkészülsz, hogy megküzdj a Barlangi Emberrel.\n" +
 "Barlangi Ember ÜGYESSÉG 7 ÉLETERŐ 7";
+    ImageIcon varazslo = new ImageIcon("C:\\Számalk\\Csolti\\A halál labirintusa\\src\\kepek\\varazslo.png");
+    ImageIcon torpe = new ImageIcon("C:\\Számalk\\Csolti\\A halál labirintusa\\src\\kepek\\harcos3.png");
+    ImageIcon tunde = new ImageIcon("C:\\Számalk\\Csolti\\A halál labirintusa\\src\\kepek\\tunde1.png");
+    
     
     
     public HalalLabirintusa() {
@@ -46,11 +51,16 @@ public class HalalLabirintusa extends javax.swing.JFrame {
         btnTunde.setOpaque(false);
         btnTunde.setBackground(new Color(0, 0, 0, 0));
         
-        
+        pnlKezdes.setVisible(true);
+        pnlKarakterValasztas.setVisible(false);
+        lblKarakterHatter.setVisible(false);
         lblHatter.setVisible(false);
         pnlJatek.setVisible(false);
-        pnlKarakterValasztas.setVisible(true);
-        lblKarakterHatter.setVisible(false);
+        btnTorpe.setVisible(false);
+        btnTunde.setVisible(false);
+        btnVarazslo.setVisible(false);
+        lblKarakterCim.setVisible(false);
+        
     }
 
     /**
@@ -65,20 +75,20 @@ public class HalalLabirintusa extends javax.swing.JFrame {
         pnlJatek = new javax.swing.JLayeredPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtaSzoveg = new javax.swing.JTextArea();
-        btn1 = new javax.swing.JButton();
-        btn2 = new javax.swing.JButton();
         lblKep = new javax.swing.JLabel();
         lblElet = new javax.swing.JLabel();
         lblEletMennyiseg = new javax.swing.JLabel();
         lblErme = new javax.swing.JLabel();
         lblErmeMennyiseg = new javax.swing.JLabel();
         lblCim = new javax.swing.JLabel();
+        btn2 = new javax.swing.JButton();
+        btn1 = new javax.swing.JButton();
         lblHatter = new javax.swing.JLabel();
         pnlKarakterValasztas = new javax.swing.JLayeredPane();
-        btnTorpe = new javax.swing.JButton();
+        lblKarakterCim = new javax.swing.JLabel();
         btnVarazslo = new javax.swing.JButton();
         btnTunde = new javax.swing.JButton();
-        lblKarakterCim = new javax.swing.JLabel();
+        btnTorpe = new javax.swing.JButton();
         lblKepesseg = new javax.swing.JLabel();
         lblKarakterHatter = new javax.swing.JLabel();
         pnlKezdes = new javax.swing.JLayeredPane();
@@ -102,7 +112,7 @@ public class HalalLabirintusa extends javax.swing.JFrame {
         txtaSzoveg.setEditable(false);
         txtaSzoveg.setBackground(new java.awt.Color(91, 72, 41));
         txtaSzoveg.setColumns(20);
-        txtaSzoveg.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        txtaSzoveg.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 18)); // NOI18N
         txtaSzoveg.setForeground(new java.awt.Color(239, 237, 193));
         txtaSzoveg.setLineWrap(true);
         txtaSzoveg.setRows(5);
@@ -113,32 +123,9 @@ public class HalalLabirintusa extends javax.swing.JFrame {
         pnlJatek.add(jScrollPane1);
         jScrollPane1.setBounds(369, 71, 202, 241);
 
-        btn1.setBackground(new java.awt.Color(91, 72, 41));
-        btn1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        btn1.setForeground(new java.awt.Color(239, 237, 193));
-        btn1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn1MouseClicked(evt);
-            }
-        });
-        pnlJatek.add(btn1);
-        btn1.setBounds(750, 330, 100, 53);
-
-        btn2.setBackground(new java.awt.Color(91, 72, 41));
-        btn2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        btn2.setForeground(new java.awt.Color(239, 237, 193));
-        btn2.setText("Kezdés");
-        btn2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn2MouseClicked(evt);
-            }
-        });
-        pnlJatek.add(btn2);
-        btn2.setBounds(896, 330, 100, 53);
-
         lblKep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/harcos3.png"))); // NOI18N
         pnlJatek.add(lblKep);
-        lblKep.setBounds(111, 71, 185, 260);
+        lblKep.setBounds(80, 70, 185, 260);
 
         lblElet.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         lblElet.setText("Élet:");
@@ -153,55 +140,104 @@ public class HalalLabirintusa extends javax.swing.JFrame {
         lblErme.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         lblErme.setText("Érmék:");
         pnlJatek.add(lblErme);
-        lblErme.setBounds(186, 360, 77, 33);
+        lblErme.setBounds(180, 360, 77, 33);
 
         lblErmeMennyiseg.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         lblErmeMennyiseg.setText("25");
         pnlJatek.add(lblErmeMennyiseg);
-        lblErmeMennyiseg.setBounds(269, 360, 27, 33);
+        lblErmeMennyiseg.setBounds(266, 360, 50, 33);
 
         lblCim.setFont(new java.awt.Font("Tempus Sans ITC", 1, 24)); // NOI18N
         lblCim.setText("A HALÁL LABIRINTUSA");
         pnlJatek.add(lblCim);
         lblCim.setBounds(36, 26, 268, 33);
 
-        lblHatter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/hatter4.png"))); // NOI18N
-        pnlJatek.add(lblHatter);
-        lblHatter.setBounds(-40, -10, 650, 470);
+        btn2.setBackground(new java.awt.Color(91, 72, 41));
+        btn2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        btn2.setForeground(new java.awt.Color(239, 237, 193));
+        btn2.setText("Kezdés");
+        btn2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn2MouseClicked(evt);
+            }
+        });
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
+        pnlJatek.add(btn2);
+        btn2.setBounds(896, 330, 100, 53);
+
+        btn1.setBackground(new java.awt.Color(91, 72, 41));
+        btn1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        btn1.setForeground(new java.awt.Color(239, 237, 193));
+        btn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn1MouseClicked(evt);
+            }
+        });
+        pnlJatek.add(btn1);
+        btn1.setBounds(750, 330, 100, 53);
 
         getContentPane().add(pnlJatek);
-        pnlJatek.setBounds(680, 10, 650, 450);
+        pnlJatek.setBounds(10, 10, 650, 450);
 
-        btnTorpe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/harcos3.png"))); // NOI18N
-        pnlKarakterValasztas.add(btnTorpe);
-        btnTorpe.setBounds(400, 90, 240, 260);
+        lblHatter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/hatter4.png"))); // NOI18N
+        getContentPane().add(lblHatter);
+        lblHatter.setBounds(0, -10, 650, 470);
+        getContentPane().add(pnlKarakterValasztas);
+        pnlKarakterValasztas.setBounds(0, 0, 650, 0);
+
+        lblKarakterCim.setFont(new java.awt.Font("Tempus Sans ITC", 1, 36)); // NOI18N
+        lblKarakterCim.setText("VÁLASSZ KARAKTERT!");
+        getContentPane().add(lblKarakterCim);
+        lblKarakterCim.setBounds(130, 30, 410, 50);
 
         btnVarazslo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/varazslo.png"))); // NOI18N
         btnVarazslo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVarazsloMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnVarazsloMouseEntered(evt);
             }
         });
-        pnlKarakterValasztas.add(btnVarazslo);
+        getContentPane().add(btnVarazslo);
         btnVarazslo.setBounds(60, 80, 180, 270);
 
         btnTunde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/tunde1.png"))); // NOI18N
-        pnlKarakterValasztas.add(btnTunde);
+        btnTunde.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTundeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnTundeMouseEntered(evt);
+            }
+        });
+        getContentPane().add(btnTunde);
         btnTunde.setBounds(250, 90, 140, 260);
 
-        lblKarakterCim.setFont(new java.awt.Font("Tempus Sans ITC", 1, 36)); // NOI18N
-        lblKarakterCim.setText("VÁLASSZ KARAKTERT!");
-        pnlKarakterValasztas.add(lblKarakterCim);
-        lblKarakterCim.setBounds(130, 30, 410, 50);
-        pnlKarakterValasztas.add(lblKepesseg);
-        lblKepesseg.setBounds(100, 360, 460, 60);
+        btnTorpe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/harcos3.png"))); // NOI18N
+        btnTorpe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTorpeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnTorpeMouseEntered(evt);
+            }
+        });
+        getContentPane().add(btnTorpe);
+        btnTorpe.setBounds(400, 90, 240, 260);
+
+        lblKepesseg.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lblKepesseg.setForeground(new java.awt.Color(255, 255, 204));
+        getContentPane().add(lblKepesseg);
+        lblKepesseg.setBounds(100, 350, 460, 80);
 
         lblKarakterHatter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/kepek/hatter4.png"))); // NOI18N
-        pnlKarakterValasztas.add(lblKarakterHatter);
+        getContentPane().add(lblKarakterHatter);
         lblKarakterHatter.setBounds(0, 0, 650, 450);
-
-        getContentPane().add(pnlKarakterValasztas);
-        pnlKarakterValasztas.setBounds(0, 0, 650, 0);
 
         lblElsoCim.setFont(new java.awt.Font("Viner Hand ITC", 1, 24)); // NOI18N
         lblElsoCim.setForeground(new java.awt.Color(249, 241, 213));
@@ -287,7 +323,7 @@ public class HalalLabirintusa extends javax.swing.JFrame {
 //    pnlJatek.setVisible(false);
 //    pnlKarakterValasztas.setVisible(false);
 //    lblKarakterHatter.setVisible(false);
-    pnlKezdes.setVisible(true);
+//    pnlKezdes.setVisible(true);
 //        JTextArea txtaSzoveg = new JTextArea();
 //    txtaSzoveg.setOpaque(false);
 //    txtaSzoveg.setBackground(new Color(0, 0, 0, 0));
@@ -331,12 +367,58 @@ public class HalalLabirintusa extends javax.swing.JFrame {
     private void btnKezdesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKezdesMouseClicked
         lblKarakterHatter.setVisible(true);
         pnlKarakterValasztas.setVisible(true);
+        btnTorpe.setVisible(true);
+        btnTunde.setVisible(true);
+        btnVarazslo.setVisible(true);
+        lblKarakterCim.setVisible(true);
   
     }//GEN-LAST:event_btnKezdesMouseClicked
 
     private void btnVarazsloMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVarazsloMouseEntered
-    lblKepesseg.setText("Varázsló"+System.lineSeparator()+"Élet: 8"+System.lineSeparator()+"Érmék: 30"+System.lineSeparator()+"Képesség:Varázsereje van, úgyhogy félnek tőle a trollok.");
+    lblKepesseg.setText("<html>Varázsló<br />Élet: 8     Érmék: 20<br />Képesség:Varázsereje van, úgyhogy félnek tőle a trollok.</html>");
     }//GEN-LAST:event_btnVarazsloMouseEntered
+
+    private void btnTundeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTundeMouseEntered
+    lblKepesseg.setText("<html>Tünde<br />Élet: 12     Érmék: 8<br />Képesség:Gyógyítóereje ven, ha sérül, +2 életerő</html>");
+    }//GEN-LAST:event_btnTundeMouseEntered
+
+    private void btnTorpeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTorpeMouseEntered
+    lblKepesseg.setText("<html>Törpe<br />Élet: 10     Érmék: 10<br />Képesség:Hatalmas kalapácsa bárkit megsebez, csatában +2 sebzés.</html>");
+    }//GEN-LAST:event_btnTorpeMouseEntered
+
+    private void btnVarazsloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVarazsloMouseClicked
+    pnlJatek.setVisible(true);
+    lblHatter.setVisible(true);
+    lblKep.setIcon(varazslo);
+    lblEletMennyiseg.setText("8");
+    lblErmeMennyiseg.setText("20");
+    btn1.setVisible(true);
+    btn2.setVisible(true);
+    }//GEN-LAST:event_btnVarazsloMouseClicked
+
+    private void btnTundeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTundeMouseClicked
+    pnlJatek.setVisible(true);
+    lblHatter.setVisible(true);
+    lblKep.setIcon(tunde);
+    lblEletMennyiseg.setText("12");
+    lblErmeMennyiseg.setText("8");
+    btn1.setVisible(true);
+    btn2.setVisible(true);
+    }//GEN-LAST:event_btnTundeMouseClicked
+
+    private void btnTorpeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTorpeMouseClicked
+    pnlJatek.setVisible(true);
+    lblHatter.setVisible(true);
+    lblKep.setIcon(torpe);
+    lblEletMennyiseg.setText("10");
+    lblErmeMennyiseg.setText("12");
+    btn1.setVisible(true);
+    btn2.setVisible(true);
+    }//GEN-LAST:event_btnTorpeMouseClicked
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn2ActionPerformed
 
     /**
      * @param args the command line arguments
