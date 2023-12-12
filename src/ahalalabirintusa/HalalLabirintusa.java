@@ -34,7 +34,8 @@ public class HalalLabirintusa extends javax.swing.JFrame {
     String oldal293="A három pár nedves lábnyomot követve az alagútnyugati elágazásában hamarosan egy újabb el-ágazáshoz érsz. Továbbmész nyugat felé a lábnyomokat követve, vagy"
             + "inkább észak felé mész a harmadik pár lábnyom után?";
     String oldal373="Fölmászol a lágy sziklára, attól tartasz, hogy bár-melyik pillanatban elnyelhet. Nehéz átvergődni rajta, mert puha anyagában alig tudod a lábadat emelni, de végül átvergődsz rajta. Megkönnyebbülten érsz újra szilárd talajra, és fordulsz kelet felé.";
-    String oldal387="Hallod, hogy elölről súlyos lépések közelednek. Egy széles, állatbőrökbe öltözött, kőbaltás, primitívlény lép elő. Ahogy meglát, morog, a földre köp, majd a kőbaltát felemelve közeledik, és mindennek kinéz, csak barátságosnak nem. Előhúzod kardodat, és felkészülsz, hogy megküzdj a Barlangi Emberrel.\n" +
+    String oldal387="Hallod, hogy elölről súlyos lépések közelednek. Egy széles, állatbőrökbe öltözött, kőbaltás, primitívlény lép elő. Ahogy meglát, morog, a földre köp, majd a kőbaltát felemelve közeledik, és mindennek kinéz, csak barátságosnak nem."
+            + " Előhúzod kardodat, és felkészülsz, hogy megküzdj a Barlangi Emberrel.\n" +
 "Barlangi Ember \nÜGYESSÉG: 7 \nÉLETERŐ: 7";
     ImageIcon varazslo = new ImageIcon("C:\\Számalk\\Csolti\\A halál labirintusa\\src\\kepek\\varazslo.png");
     ImageIcon torpe = new ImageIcon("C:\\Számalk\\Csolti\\A halál labirintusa\\src\\kepek\\harcos.png");
@@ -107,11 +108,6 @@ public class HalalLabirintusa extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(665, 488));
         setResizable(false);
         setSize(new java.awt.Dimension(651, 453));
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
         getContentPane().setLayout(null);
 
         jScrollPane1.setBackground(new java.awt.Color(125, 66, 38));
@@ -298,11 +294,6 @@ public class HalalLabirintusa extends javax.swing.JFrame {
                 btnKezdesMouseExited(evt);
             }
         });
-        btnKezdes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKezdesActionPerformed(evt);
-            }
-        });
         pnlKezdes.add(btnKezdes);
         btnKezdes.setBounds(82, 252, 199, 37);
 
@@ -316,22 +307,7 @@ public class HalalLabirintusa extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-//    lblHatter.setVisible(false);
-//    pnlJatek.setVisible(false);
-//    pnlKarakterValasztas.setVisible(false);
-//    lblKarakterHatter.setVisible(false);
-//    pnlKezdes.setVisible(true);
-//        JTextArea txtaSzoveg = new JTextArea();
-//    txtaSzoveg.setOpaque(false);
-//    txtaSzoveg.setBackground(new Color(0, 0, 0, 0));
-    }//GEN-LAST:event_formWindowOpened
         
-    private void btnKezdesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKezdesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnKezdesActionPerformed
-
     private void btnKezdesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKezdesMouseClicked
         lblKarakterHatter.setVisible(true);
         pnlKarakterValasztas.setVisible(true);
